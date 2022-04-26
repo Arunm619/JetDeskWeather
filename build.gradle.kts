@@ -5,6 +5,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.5.31"
     id("org.jetbrains.compose") version "1.0.0"
+    kotlin("plugin.serialization") version "1.5.10"
 }
 
 group = "me.arunsudharsan"
@@ -18,6 +19,10 @@ repositories {
 
 dependencies {
     implementation(compose.desktop.currentOs)
+    implementation("io.ktor:ktor-client-core:1.6.4")
+    implementation("io.ktor:ktor-client-cio:1.6.4")
+    implementation("io.ktor:ktor-client-serialization:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
 }
 
 tasks.withType<KotlinCompile> {
